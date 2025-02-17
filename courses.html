@@ -4,49 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Course Page</title>
-    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css-min/style.min.css">
 </head>
-<body class="d-flex flex-column min-vh-100" style="background: #2c3e50;">
-    <header class="bg-dark text-white py-3 px-4 d-flex justify-content-between align-items-center">
-        <h1 class="h3 mb-0">StudiDesk</h1>
-        <div class="d-flex align-items-center">
-            <div class="dropdown me-3">
-                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Manage
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Option 1</a></li>
-                    <li><a class="dropdown-item" href="#">Option 2</a></li>
-                </ul>
-            </div>
-            <button class="btn btn-danger">Logout</button>
-        </div>
-    </header>
+<body class="d-flex flex-column min-vh-100">
 
-    <div class="text-white py-2">
-        <br>
+    <header id="navbar"></header>
+
+    <section class="container search-wrapper">
+        <input type="search" id="search" class="form-control" placeholder="Subscribed">
+    </section>
+
+    <div class="text-white">
         <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
-            <h2 class="h2 mb-0">Subscriptions</h2>
+            <h2 class="title-2 mb-0">Subscribed (2)</h2>
         </div>
     </div>
     
-    <main class="container my-4 flex-grow-1">
+    <!-- <main class="container my-4 flex-grow-1">
         <div class="row">
             <h5 class="text-white text-center">Subscribe to a course to start learning</h5>
         </div>
-    </main>
+    </main> -->
 
     <main class="container my-4 flex-grow-1">
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            
             <div class="col">
-                <div class="card h-100 shadow-sm bg-dark text-white">
-                    <img src="https://tlabenv01astorage.blob.core.windows.net/images/7ed1735e-ad01-4a10-aa5b-a9e34c161c01/Infinity.png" class="card-img-top" alt="Course Image">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="position-relative">
+                        <img src="/assets/img/placeholder.png" class="card-img-top" alt="Course Image">
+                    </div>
                     <div class="card-body">
                         <div class="title-buttons">
-                            <h5 class="card-title">Infraon Infinity</h5>
-                            <div class="d-flex gap-2">
+                            <h3 class="title-3">ITIL V4 Training</h3>
+                            <p class="date">07 Jan 2020</p>
+                            <!-- <div class="d-flex gap-2">
                                 <button class="btn btn-outline-primary btn-sm" title="Edit">
                                     <i class="fas fa-edit"></i>
                                 </button>
@@ -58,86 +52,134 @@
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </a>
-                            </div>
+                            </div> -->
                         </div>
-                        <small class="text-white">Exp: 2025-01-03</small>
+                        
+                        <small class="course-description">ITIL V4 Training > Product Trainings >  InfraOn Partner Trainings Approved > This is the ITIL V4 Training which is a part of the mandatory compliance training. ></small>
+
+                        <div class="tags">
+                            <small>#ITIL</small>
+                            <small>#V4</small>
+                            <small>#Training</small>
+                        </div>
+
+                        <div class="progress-bar-wrapper">
+                            <div class="progress-line">
+                                <small>45% Completed</small>
+                                <span></span>
+                            </div>
+
+                            <button class="view-course">
+                                View
+                                <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.20455 12.473L5.88778 11.169L9.83168 7.22514H0.25V5.32031H9.83168L5.88778 1.38281L7.20455 0.0724429L13.4048 6.27273L7.20455 12.473Z" fill="#23232F"/></svg>                                        
+                            </button>
+                        </div>
                     </div>
-                    <!-- Description text that will be shown on hover -->
-                    <div class="card-description">
-                        <h6>Infraon Infinity</h6>
-                        <hr>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+            </div>
+            
+            
+            <div class="col">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="position-relative">
+                        <img src="/assets/img/placeholder.png" class="card-img-top" alt="Course Image">
+                    </div>
+                    <div class="card-body">
+                        <div class="title-buttons">
+                            <h3 class="title-3">ITIL V4 Training</h3>
+                            <p class="date">07 Jan 2020</p>
+                            <!-- <div class="d-flex gap-2">
+                                <button class="btn btn-outline-primary btn-sm" title="Edit">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="btn btn-outline-danger btn-sm" title="Delete">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                                <a href="toc.html">
+                                    <button class="btn btn-outline-warning btn-sm" title="View">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </a>
+                            </div> -->
+                        </div>
+                        
+                        <small class="course-description">ITIL V4 Training > Product Trainings >  InfraOn Partner Trainings Approved > This is the ITIL V4 Training which is a part of the mandatory compliance training. ></small>
+
+                        <div class="tags">
+                            <small>#ITIL</small>
+                            <small>#V4</small>
+                            <small>#Training</small>
+                        </div>
+
+                        <div class="progress-bar-wrapper">
+                            <div class="progress-line">
+                                <small>45% Completed</small>
+                                <span></span>
+                            </div>
+
+                            <button class="view-course">
+                                View
+                                <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.20455 12.473L5.88778 11.169L9.83168 7.22514H0.25V5.32031H9.83168L5.88778 1.38281L7.20455 0.0724429L13.4048 6.27273L7.20455 12.473Z" fill="#23232F"/></svg>                                        
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="position-relative">
+                        <img src="/assets/img/placeholder.png" class="card-img-top" alt="Course Image">
+                    </div>
+                    <div class="card-body">
+                        <div class="title-buttons">
+                            <h3 class="title-3">ITIL V4 Training</h3>
+                            <p class="date">07 Jan 2020</p>
+                            <!-- <div class="d-flex gap-2">
+                                <button class="btn btn-outline-primary btn-sm" title="Edit">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="btn btn-outline-danger btn-sm" title="Delete">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                                <a href="toc.html">
+                                    <button class="btn btn-outline-warning btn-sm" title="View">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </a>
+                            </div> -->
+                        </div>
+                        
+                        <small class="course-description">ITIL V4 Training > Product Trainings >  InfraOn Partner Trainings Approved > This is the ITIL V4 Training which is a part of the mandatory compliance training. ></small>
+
+                        <div class="tags">
+                            <small>#ITIL</small>
+                            <small>#V4</small>
+                            <small>#Training</small>
+                        </div>
+
+                        <div class="progress-bar-wrapper">
+                            <div class="progress-line">
+                                <small>45% Completed</small>
+                                <span></span>
+                            </div>
+
+                            <button class="view-course">
+                                View
+                                <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.20455 12.473L5.88778 11.169L9.83168 7.22514H0.25V5.32031H9.83168L5.88778 1.38281L7.20455 0.0724429L13.4048 6.27273L7.20455 12.473Z" fill="#23232F"/></svg>                                        
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="col">
-                <div class="card h-100 shadow-sm bg-dark text-white">
-                    <img src="https://tlabenv01astorage.blob.core.windows.net/images/be6ee470-3c98-4bc4-9b8e-6c32b79eeecd/assets.png" class="card-img-top" alt="Course Image">
-                    <div class="card-body">
-                        <div class="title-buttons">
-                            <h5 class="card-title">Infraon Assets</h5>
-                            <div class="d-flex gap-2">
-                                <button class="btn btn-outline-primary btn-sm" title="Edit">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <button class="btn btn-outline-danger btn-sm" title="Delete">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                                <a href="toc.html">
-                                    <button class="btn btn-outline-warning btn-sm" title="View">
-                                        <i class="fas fa-eye"></i>
-                                    </button>
-                                </a>
-                                
-                            </div>
-                        </div>
-                        <small class="text-white">Exp: 2025-01-03</small>
-                    </div>
-                    <div class="card-description">
-                        <h6>Infraon Assets</h6>
-                        <hr>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card h-100 shadow-sm bg-dark text-white">
-                    <img src="https://tlabenv01astorage.blob.core.windows.net/images/71b08ceb-ea6e-4f4e-b605-d9d8a95ac074/ITSM.png" class="card-img-top" alt="Course Image">
-                    <div class="card-body">
-                        <div class="title-buttons">
-                            <h5 class="card-title">Infraon ITSM</h5>
-                            <div class="d-flex gap-2">
-                                <button class="btn btn-outline-primary btn-sm" title="Edit">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <button class="btn btn-outline-danger btn-sm" title="Delete">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                                <a href="toc.html">
-                                    <button class="btn btn-outline-warning btn-sm" title="View">
-                                        <i class="fas fa-eye"></i>
-                                    </button>
-                                </a>
-                            </div>
-                        </div>
-                        <small class="text-white">Exp: 2025-01-03</small>
-                    </div>
-                    <div class="card-description">
-                        <h6>Infraon ITSM</h6>
-                        <hr>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.</p>
-                    </div>
-                </div>
-            </div>
         </div>
     </main>
 
-    <div class="text-white py-2">
+    <div class="py-2">
         <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
-            <h2 class="h2 mb-0">Courses</h2>
-            <div class="d-flex flex-column flex-md-row align-items-md-center">
+            <h2 class="title-2 mb-0">All Courses (6)</h2>
+            <!-- <div class="d-flex flex-column flex-md-row align-items-md-center">
                 <select class="form-select mb-2 mb-md-0 me-2 bg-dark text-white" style="width: auto;">
                     <option>--Select a Catalog--</option>
                 </select>
@@ -145,19 +187,23 @@
                     <option>--Select a Collection--</option>
                 </select>
                 <button class="btn btn-primary mb-2 mb-md-0"><i class="fas fa-plus"></i></button>
-            </div>
+            </div> -->
         </div>
     </div>
 
     <main class="container my-4 flex-grow-1">
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            
             <div class="col">
-                <div class="card h-100 shadow-sm bg-dark text-white">
-                    <img src="https://tlabenv01astorage.blob.core.windows.net/images/7ed1735e-ad01-4a10-aa5b-a9e34c161c01/Infinity.png" class="card-img-top" alt="Course Image">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="position-relative">
+                        <img src="/assets/img/placeholder.png" class="card-img-top" alt="Course Image">
+                    </div>
                     <div class="card-body">
                         <div class="title-buttons">
-                            <h5 class="card-title">Infraon Infinity</h5>
-                            <div class="d-flex gap-2">
+                            <h3 class="title-3">ITIL V4 Training</h3>
+                            <p class="date">07 Jan 2020</p>
+                            <!-- <div class="d-flex gap-2">
                                 <button class="btn btn-outline-primary btn-sm" title="Edit">
                                     <i class="fas fa-edit"></i>
                                 </button>
@@ -169,137 +215,220 @@
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </a>
-                            </div>
+                            </div> -->
                         </div>
-                        <small class="text-white">Exp: 2025-01-03</small>
+                        
+                        <small class="course-description">ITIL V4 Training > Product Trainings >  InfraOn Partner Trainings Approved > This is the ITIL V4 Training which is a part of the mandatory compliance training. ></small>
+
+                        <div class="tags">
+                            <small>#ITIL</small>
+                            <small>#V4</small>
+                            <small>#Training</small>
+                        </div>
+
+                        <div class="progress-bar-wrapper">
+                            <div class="progress-line">
+                                <small>45% Completed</small>
+                                <span></span>
+                            </div>
+
+                            <button class="view-course">
+                                View
+                                <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.20455 12.473L5.88778 11.169L9.83168 7.22514H0.25V5.32031H9.83168L5.88778 1.38281L7.20455 0.0724429L13.4048 6.27273L7.20455 12.473Z" fill="#23232F"/></svg>                                        
+                            </button>
+                        </div>
                     </div>
-                    <div class="card-description">
-                        <h6>Infraon Infinity</h6>
-                        <hr>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.</p>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="position-relative">
+                        <img src="/assets/img/placeholder.png" class="card-img-top" alt="Course Image">
+                    </div>
+                    <div class="card-body">
+                        <div class="title-buttons">
+                            <h3 class="title-3">ITIL V4 Training</h3>
+                            <p class="date">07 Jan 2020</p>
+                            <!-- <div class="d-flex gap-2">
+                                <button class="btn btn-outline-primary btn-sm" title="Edit">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="btn btn-outline-danger btn-sm" title="Delete">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                                <a href="toc.html">
+                                    <button class="btn btn-outline-warning btn-sm" title="View">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </a>
+                            </div> -->
+                        </div>
+                        
+                        <small class="course-description">ITIL V4 Training > Product Trainings >  InfraOn Partner Trainings Approved > This is the ITIL V4 Training which is a part of the mandatory compliance training. ></small>
+
+                        <div class="tags">
+                            <small>#ITIL</small>
+                            <small>#V4</small>
+                            <small>#Training</small>
+                        </div>
+
+                        <div class="progress-bar-wrapper">
+                            <div class="progress-line">
+                                <small>45% Completed</small>
+                                <span></span>
+                            </div>
+
+                            <button class="view-course">
+                                View
+                                <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.20455 12.473L5.88778 11.169L9.83168 7.22514H0.25V5.32031H9.83168L5.88778 1.38281L7.20455 0.0724429L13.4048 6.27273L7.20455 12.473Z" fill="#23232F"/></svg>                                        
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="position-relative">
+                        <img src="/assets/img/placeholder.png" class="card-img-top" alt="Course Image">
+                    </div>
+                    <div class="card-body">
+                        <div class="title-buttons">
+                            <h3 class="title-3">ITIL V4 Training</h3>
+                            <p class="date">07 Jan 2020</p>
+                            <!-- <div class="d-flex gap-2">
+                                <button class="btn btn-outline-primary btn-sm" title="Edit">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="btn btn-outline-danger btn-sm" title="Delete">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                                <a href="toc.html">
+                                    <button class="btn btn-outline-warning btn-sm" title="View">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </a>
+                            </div> -->
+                        </div>
+                        
+                        <small class="course-description">ITIL V4 Training > Product Trainings >  InfraOn Partner Trainings Approved > This is the ITIL V4 Training which is a part of the mandatory compliance training. ></small>
+
+                        <div class="tags">
+                            <small>#ITIL</small>
+                            <small>#V4</small>
+                            <small>#Training</small>
+                        </div>
+
+                        <div class="progress-bar-wrapper">
+                            <div class="progress-line">
+                                <small>45% Completed</small>
+                                <span></span>
+                            </div>
+
+                            <button class="view-course">
+                                View
+                                <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.20455 12.473L5.88778 11.169L9.83168 7.22514H0.25V5.32031H9.83168L5.88778 1.38281L7.20455 0.0724429L13.4048 6.27273L7.20455 12.473Z" fill="#23232F"/></svg>                                        
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="position-relative">
+                        <img src="/assets/img/placeholder.png" class="card-img-top" alt="Course Image">
+                    </div>
+                    <div class="card-body">
+                        <div class="title-buttons">
+                            <h3 class="title-3">ITIL V4 Training</h3>
+                            <p class="date">07 Jan 2020</p>
+                            <!-- <div class="d-flex gap-2">
+                                <button class="btn btn-outline-primary btn-sm" title="Edit">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="btn btn-outline-danger btn-sm" title="Delete">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                                <a href="toc.html">
+                                    <button class="btn btn-outline-warning btn-sm" title="View">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </a>
+                            </div> -->
+                        </div>
+                        
+                        <small class="course-description">ITIL V4 Training > Product Trainings >  InfraOn Partner Trainings Approved > This is the ITIL V4 Training which is a part of the mandatory compliance training. ></small>
+
+                        <div class="tags">
+                            <small>#ITIL</small>
+                            <small>#V4</small>
+                            <small>#Training</small>
+                        </div>
+
+                        <div class="progress-bar-wrapper">
+                            <div class="progress-line">
+                                <small>45% Completed</small>
+                                <span></span>
+                            </div>
+
+                            <button class="view-course">
+                                View
+                                <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.20455 12.473L5.88778 11.169L9.83168 7.22514H0.25V5.32031H9.83168L5.88778 1.38281L7.20455 0.0724429L13.4048 6.27273L7.20455 12.473Z" fill="#23232F"/></svg>                                        
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="position-relative">
+                        <img src="/assets/img/placeholder.png" class="card-img-top" alt="Course Image">
+                    </div>
+                    <div class="card-body">
+                        <div class="title-buttons">
+                            <h3 class="title-3">ITIL V4 Training</h3>
+                            <p class="date">07 Jan 2020</p>
+                            <!-- <div class="d-flex gap-2">
+                                <button class="btn btn-outline-primary btn-sm" title="Edit">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="btn btn-outline-danger btn-sm" title="Delete">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                                <a href="toc.html">
+                                    <button class="btn btn-outline-warning btn-sm" title="View">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </a>
+                            </div> -->
+                        </div>
+                        
+                        <small class="course-description">ITIL V4 Training > Product Trainings >  InfraOn Partner Trainings Approved > This is the ITIL V4 Training which is a part of the mandatory compliance training. ></small>
+
+                        <div class="tags">
+                            <small>#ITIL</small>
+                            <small>#V4</small>
+                            <small>#Training</small>
+                        </div>
+
+                        <div class="progress-bar-wrapper">
+                            <div class="progress-line">
+                                <small>45% Completed</small>
+                                <span></span>
+                            </div>
+
+                            <button class="view-course">
+                                View
+                                <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.20455 12.473L5.88778 11.169L9.83168 7.22514H0.25V5.32031H9.83168L5.88778 1.38281L7.20455 0.0724429L13.4048 6.27273L7.20455 12.473Z" fill="#23232F"/></svg>                                        
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="col">
-                <div class="card h-100 shadow-sm bg-dark text-white">
-                    <img src="https://tlabenv01astorage.blob.core.windows.net/images/be6ee470-3c98-4bc4-9b8e-6c32b79eeecd/assets.png" class="card-img-top" alt="Course Image">
-                    <div class="card-body">
-                        <div class="title-buttons">
-                            <h5 class="card-title">Infraon Infinity</h5>
-                            <div class="d-flex gap-2">
-                                <button class="btn btn-outline-primary btn-sm" title="Edit">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <button class="btn btn-outline-danger btn-sm" title="Delete">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                                <a href="toc.html">
-                                    <button class="btn btn-outline-warning btn-sm" title="View">
-                                        <i class="fas fa-eye"></i>
-                                    </button>
-                                </a>
-                            </div>
-                        </div>
-                        <small class="text-white">Exp: 2025-01-03</small>
-                    </div>
-                    <div class="card-description">
-                        <h6>Infraon Infinity</h6>
-                        <hr>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card h-100 shadow-sm bg-dark text-white">
-                    <img src="https://tlabenv01astorage.blob.core.windows.net/images/71b08ceb-ea6e-4f4e-b605-d9d8a95ac074/ITSM.png" class="card-img-top" alt="Course Image">
-                    <div class="card-body">
-                        <div class="title-buttons">
-                            <h5 class="card-title">Infraon Infinity</h5>
-                            <div class="d-flex gap-2">
-                                <button class="btn btn-outline-primary btn-sm" title="Edit">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <button class="btn btn-outline-danger btn-sm" title="Delete">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                                <a href="toc.html">
-                                    <button class="btn btn-outline-warning btn-sm" title="View">
-                                        <i class="fas fa-eye"></i>
-                                    </button>
-                                </a>
-                            </div>
-                        </div>
-                        <small class="text-white">Exp: 2025-01-03</small>
-                    </div>
-                    <div class="card-description">
-                        <h6>Infraon Infinity</h6>
-                        <hr>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card h-100 shadow-sm bg-dark text-white">
-                    <img src="https://tlabenv01astorage.blob.core.windows.net/images/42073062-2f23-4112-a8c9-6c701b6af076/NMS.png" class="card-img-top" alt="Course Image">
-                    <div class="card-body">
-                        <div class="title-buttons">
-                            <h5 class="card-title">Infraon Infinity</h5>
-                            <div class="d-flex gap-2">
-                                <button class="btn btn-outline-primary btn-sm" title="Edit">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <button class="btn btn-outline-danger btn-sm" title="Delete">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                                <a href="toc.html">
-                                    <button class="btn btn-outline-warning btn-sm" title="View">
-                                        <i class="fas fa-eye"></i>
-                                    </button>
-                                </a>
-                            </div>
-                        </div>
-                        <small class="text-white">Exp: 2025-01-03</small>
-                    </div>
-                    <div class="card-description">
-                        <h6>Infraon Infinity</h6>
-                        <hr>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card h-100 shadow-sm bg-dark text-white">
-                    <img src="https://tlabenv01astorage.blob.core.windows.net/images/42267d6b-f0a5-4164-9bb6-5aaa0983e1f5/Frame%202.png" class="card-img-top" alt="Course Image">
-                    <div class="card-body">
-                        <div class="title-buttons">
-                            <h5 class="card-title">Infraon Product Educational Workshop>Internal TrainingInfraon Product Educational Workshop>Internal Training</h5>
-                            <div class="d-flex gap-2">
-                                <button class="btn btn-outline-primary btn-sm" title="Edit">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <button class="btn btn-outline-danger btn-sm" title="Delete">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                                <a href="toc.html">
-                                    <button class="btn btn-outline-warning btn-sm" title="View">
-                                        <i class="fas fa-eye"></i>
-                                    </button>
-                                </a>
-                            </div>
-                        </div>
-                        <small class="text-white">Exp: 2025-01-03</small>
-                    </div>
-                    <div class="card-description">
-                        <h6>Infraon Product Educational Workshop>Internal TrainingInfraon Product Educational Workshop>Internal TrainingInfraon Product Educational Workshop>Internal TrainingInfraon Product Educational Workshop>Internal TrainingInfraon Product Educational Workshop>Internal TrainingInfraon Product Educational Workshop>Internal Training</h6>
-                        <hr>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula justo ut sem auctor, ac hendrerit felis vulputate.</p>
-                    </div>
-                </div>
-            </div>
         </div>
     </main>
 
@@ -307,6 +436,17 @@
         <p>Powered by Thinkar Labs | Rajesh Sharma | EverestIMS</p>
     </footer>
 
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+         $(function(){
+            $("#navbar").load("/common/navbar.html");
+
+            $(".view-course").click(function(){
+                window.location.href = "/contents.html";
+            });
+         });
+    </script>
 </body>
 </html>
