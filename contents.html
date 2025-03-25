@@ -17,10 +17,19 @@
         <!-- Left Section: Video/PDF -->
         <section class="col-lg-9 p-0">
 
-            <div class="breadcrumbs">
-                <p class="breadcrumb-link">ITIL V4 Training > </p>
-                <p class="breadcrumb-link">Assets > </p>
-                <p class="breadcrumb-link active">ITIL V4 Training Assets 1</p>
+            <div class="controls">
+                <div class="" id="breadcrumbs"></div>
+    
+                <div>
+                    <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="pills-overview-tab" data-bs-toggle="pill" data-bs-target="#pills-overview" type="button" role="tab" aria-controls="pills-overview" aria-selected="true">Overview</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="pills-document-tab" data-bs-toggle="pill" data-bs-target="#pills-document" type="button" role="tab" aria-controls="pills-document" aria-selected="false">Document</button>
+                        </li>
+                    </ul>
+                </div>
             </div>
             
             
@@ -40,14 +49,6 @@
                         <embed src="https://pdfobject.com/pdf/sample.pdf" class="w-100" style="height: 660px;" type="application/pdf">
                     </div>
                 </div>
-                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="pills-overview-tab" data-bs-toggle="pill" data-bs-target="#pills-overview" type="button" role="tab" aria-controls="pills-overview" aria-selected="true">Overview</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="pills-document-tab" data-bs-toggle="pill" data-bs-target="#pills-document" type="button" role="tab" aria-controls="pills-document" aria-selected="false">Document</button>
-                    </li>
-                </ul>
             </div>
 
             <div class="chapter-overview">
@@ -482,9 +483,7 @@
     
     
 
-    <footer class="bg-dark text-white py-3 text-center mt-auto">
-        <p>Powered by Thinkar Labs | Rajesh Sharma | EverestIMS</p>
-    </footer>
+    <footer id="footer" class="footer"></footer>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
@@ -492,6 +491,8 @@
     <script>
          $(document).ready(function() {
             $("#navbar").load("/common/navbar.html");
+            $("#breadcrumbs").load("/common/breadcrumbs.html");
+            $("#footer").load("/common/footer.html");
          });
     </script>
 </body>
