@@ -1,12 +1,14 @@
 <style>
-    .menu-btns:last-child {
+    /* .menu-btns:last-child {
         display: none;
-    }
+    } */
 </style>
 
 <header class="header bg-white">
     <div class="brand-logo">
-        <img src="/assets/img/infraon-logo.svg" alt="">
+        <a href="/">
+            <img src="/assets/img/infraon-logo.svg" alt="">
+        </a>
     </div>
     
     <div class="user-controls">
@@ -23,7 +25,6 @@
                 <li><a class="dropdown-item" href="#">Option 2</a></li>
             </ul>
         </div>
-        
         <div class="user-menu dropdown">
             <button class="user-dropdown dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <img src="/assets/img/user-placeholder-male.svg" alt="">
@@ -33,8 +34,24 @@
                 </div>
             </button>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Edit Profile</a></li>
-              <li><a class="dropdown-item" href="/login.html">Logout</a></li>
+                <li>
+                    <a class="dropdown-item" href="#">
+                        <img src="./../assets/img/notification.svg" width="15" alt="">
+                        Notification
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="#">
+                        <img src="./../assets/img/profile.svg" width="15" alt="">
+                        Profile
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="/login.html">
+                        <img src="./../assets/img/logout.svg" width="15" alt="">
+                        Logout
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
