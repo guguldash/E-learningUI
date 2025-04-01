@@ -23,11 +23,17 @@
                     <label class="form-check-label" for="flexRadioDefault1">
                         Subscribed
                     </label>
-                  </div>
-                  <div class="form-check">
+                </div>
+                <div class="form-check">
                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
                     <label class="form-check-label" for="flexRadioDefault2">
                         Show all
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+                    <label class="form-check-label" for="flexRadioDefault3">
+                        Clear filter
                     </label>
                 </div>
             </ul>
@@ -36,19 +42,32 @@
         <input type="search" id="search" class="form-control" placeholder="Search">
     </section>
 
-    <div class="text-white">
+    <div class="text-white subscribed">
         <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
-            <h2 class="title-2 mb-0">Subscribed (2)</h2>
+            <h2 class="title-2 mb-0">Subscribed (8)</h2>
+
+            <div class="button-wrapper">
+                <button class="bald scroll-buttons" id="previous">
+                    <img src="/assets/img/left-arrow.svg" alt="">
+                </button>
+                <button class="bald scroll-buttons" id="next">
+                    <img src="/assets/img/right-arrow.svg" alt="">
+                </button>
+            </div>
         </div>
     </div>
 
     <style>
+        .subscribed-course-container {
+            overflow: hidden;
+        }
         .subscribed-course-container .wrapper {
             display: flex;
             gap: 1rem;
-            overflow-x: auto;
             scroll-behavior: smooth;
+            overflow-x: auto;
             padding: 25px 0;
+            scroll-snap-type: x mandatory;
         }
         .subscribed-course-container .wrapper .course-card {
             scroll-snap-align: start;
@@ -56,7 +75,7 @@
         }
     </style>
     
-    <main class="container my-4 flex-grow-1">
+    <main class="container my-4 flex-grow-1 subscribed">
         <div class="subscribed-course-container">
             <div class="wrapper">
                 <div class="course-card">
@@ -86,7 +105,7 @@
                                     <span></span>
                                 </div>
     
-                                <button class="view-course">
+                                <button class="view-course primary-button">
                                     View
                                     <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.20455 12.473L5.88778 11.169L9.83168 7.22514H0.25V5.32031H9.83168L5.88778 1.38281L7.20455 0.0724429L13.4048 6.27273L7.20455 12.473Z" fill="#23232F"/></svg>                                        
                                 </button>
@@ -122,7 +141,7 @@
                                     <span></span>
                                 </div>
     
-                                <button class="view-course">
+                                <button class="view-course primary-button">
                                     View
                                     <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.20455 12.473L5.88778 11.169L9.83168 7.22514H0.25V5.32031H9.83168L5.88778 1.38281L7.20455 0.0724429L13.4048 6.27273L7.20455 12.473Z" fill="#23232F"/></svg>                                        
                                 </button>
@@ -158,7 +177,7 @@
                                     <span></span>
                                 </div>
     
-                                <button class="view-course">
+                                <button class="view-course primary-button">
                                     View
                                     <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.20455 12.473L5.88778 11.169L9.83168 7.22514H0.25V5.32031H9.83168L5.88778 1.38281L7.20455 0.0724429L13.4048 6.27273L7.20455 12.473Z" fill="#23232F"/></svg>                                        
                                 </button>
@@ -194,7 +213,7 @@
                                     <span></span>
                                 </div>
     
-                                <button class="view-course">
+                                <button class="view-course primary-button">
                                     View
                                     <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.20455 12.473L5.88778 11.169L9.83168 7.22514H0.25V5.32031H9.83168L5.88778 1.38281L7.20455 0.0724429L13.4048 6.27273L7.20455 12.473Z" fill="#23232F"/></svg>                                        
                                 </button>
@@ -230,7 +249,7 @@
                                     <span></span>
                                 </div>
     
-                                <button class="view-course">
+                                <button class="view-course primary-button">
                                     View
                                     <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.20455 12.473L5.88778 11.169L9.83168 7.22514H0.25V5.32031H9.83168L5.88778 1.38281L7.20455 0.0724429L13.4048 6.27273L7.20455 12.473Z" fill="#23232F"/></svg>                                        
                                 </button>
@@ -266,7 +285,7 @@
                                     <span></span>
                                 </div>
     
-                                <button class="view-course">
+                                <button class="view-course primary-button">
                                     View
                                     <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.20455 12.473L5.88778 11.169L9.83168 7.22514H0.25V5.32031H9.83168L5.88778 1.38281L7.20455 0.0724429L13.4048 6.27273L7.20455 12.473Z" fill="#23232F"/></svg>                                        
                                 </button>
@@ -302,7 +321,7 @@
                                     <span></span>
                                 </div>
     
-                                <button class="view-course">
+                                <button class="view-course primary-button">
                                     View
                                     <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.20455 12.473L5.88778 11.169L9.83168 7.22514H0.25V5.32031H9.83168L5.88778 1.38281L7.20455 0.0724429L13.4048 6.27273L7.20455 12.473Z" fill="#23232F"/></svg>                                        
                                 </button>
@@ -338,7 +357,7 @@
                                     <span></span>
                                 </div>
     
-                                <button class="view-course">
+                                <button class="view-course primary-button">
                                     View
                                     <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.20455 12.473L5.88778 11.169L9.83168 7.22514H0.25V5.32031H9.83168L5.88778 1.38281L7.20455 0.0724429L13.4048 6.27273L7.20455 12.473Z" fill="#23232F"/></svg>                                        
                                 </button>
@@ -351,13 +370,13 @@
         </div>
     </main>
 
-    <div class="py-2">
+    <div class="py-2 all-courses">
         <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
             <h2 class="title-2 mb-0">All Courses (6)</h2>
         </div>
     </div>
 
-    <main class="container my-4 flex-grow-1">
+    <main class="container my-4 flex-grow-1 all-courses">
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
             
             <div class="col">
@@ -383,8 +402,8 @@
 
                         <div class="progress-bar-wrapper">
 
-                            <button class="view-course">
-                                Subscribe
+                            <button class="view-course primary-button">
+                                View
                                 <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.20455 12.473L5.88778 11.169L9.83168 7.22514H0.25V5.32031H9.83168L5.88778 1.38281L7.20455 0.0724429L13.4048 6.27273L7.20455 12.473Z" fill="#23232F"/></svg>                                        
                             </button>
                         </div>
@@ -415,8 +434,8 @@
 
                         <div class="progress-bar-wrapper">
 
-                            <button class="view-course">
-                                Subscribe
+                            <button class="view-course primary-button">
+                                View
                                 <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.20455 12.473L5.88778 11.169L9.83168 7.22514H0.25V5.32031H9.83168L5.88778 1.38281L7.20455 0.0724429L13.4048 6.27273L7.20455 12.473Z" fill="#23232F"/></svg>                                        
                             </button>
                         </div>
@@ -447,8 +466,8 @@
 
                         <div class="progress-bar-wrapper">
 
-                            <button class="view-course">
-                                Subscribe
+                            <button class="view-course primary-button">
+                                View
                                 <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.20455 12.473L5.88778 11.169L9.83168 7.22514H0.25V5.32031H9.83168L5.88778 1.38281L7.20455 0.0724429L13.4048 6.27273L7.20455 12.473Z" fill="#23232F"/></svg>                                        
                             </button>
                         </div>
@@ -479,8 +498,8 @@
 
                         <div class="progress-bar-wrapper">
 
-                            <button class="view-course">
-                                Subscribe
+                            <button class="view-course primary-button">
+                                View
                                 <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.20455 12.473L5.88778 11.169L9.83168 7.22514H0.25V5.32031H9.83168L5.88778 1.38281L7.20455 0.0724429L13.4048 6.27273L7.20455 12.473Z" fill="#23232F"/></svg>                                        
                             </button>
                         </div>
@@ -511,8 +530,8 @@
 
                         <div class="progress-bar-wrapper">
 
-                            <button class="view-course">
-                                Subscribe
+                            <button class="view-course primary-button">
+                                View
                                 <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.20455 12.473L5.88778 11.169L9.83168 7.22514H0.25V5.32031H9.83168L5.88778 1.38281L7.20455 0.0724429L13.4048 6.27273L7.20455 12.473Z" fill="#23232F"/></svg>                                        
                             </button>
                         </div>
@@ -564,9 +583,9 @@
                     card.style.flex = `0 0 ${cardWidth}%`;
                 });
 
-                container.style.display = "flex";
-                container.style.overflowX = "auto";
-                container.style.scrollSnapType = "x mandatory";
+                // container.style.display = "flex";
+                // container.style.overflowX = "auto";
+                // container.style.scrollSnapType = "x mandatory";
             }
 
             quizScore.forEach(score => {
@@ -584,6 +603,18 @@
                     let selectedValue = document.querySelector('input[name="flexRadioDefault"]:checked')
                         .nextElementSibling.textContent.trim();
                     document.querySelector('.search-wrapper .btn.dropdown-toggle').textContent = `Filter: (${selectedValue})`;
+
+                    if (selectedValue === 'Subscribed') {
+                        $(".all-courses").hide()
+                        $(".subscribed").show()
+                    } else if (selectedValue === 'Show all') {
+                        $(".subscribed").hide()
+                        $(".all-courses").show()
+                    } else {
+                        document.querySelector('.search-wrapper .btn.dropdown-toggle').textContent = `Filter`;
+                        $(".subscribed").show()
+                        $(".all-courses").show()
+                    }
                 });
             });
 
@@ -595,6 +626,26 @@
 
                 // Set CSS variable to update width of ::before
                 progressSpan.style.setProperty("--progress-width", progressPercentage + "%");
+            });
+
+
+
+
+            const prev = document.getElementById('previous');
+            const next = document.getElementById('next');
+            const scrollContainer = document.querySelector('.subscribed-course-container .wrapper');
+
+            next.addEventListener('click', () => {
+                scrollContainer.scrollBy({
+                    left: 200,
+                    behavior: 'smooth'
+                });
+            });
+            prev.addEventListener('click', () => {
+                scrollContainer.scrollBy({
+                    left: -200,
+                    behavior: 'smooth'
+                });
             });
          });
     </script>

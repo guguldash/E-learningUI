@@ -15,6 +15,10 @@ body {
 h1, h2, h3, h4, h5, h6, p {
     margin-bottom: 0;
 }
+ul {
+    padding-left: 0;
+    margin: 0;
+}
 
 .list-group-item {
     background-color: #34495e;
@@ -36,6 +40,95 @@ h1, h2, h3, h4, h5, h6, p {
 }
 .header {
     padding: 16px 48px;
+}
+.primary-button {
+    background-color: var(--gold);
+    color: var(--title-dark);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 175%;
+    text-align: center;
+    padding: 8px 30px;
+    border-radius: 4px;
+    border: none;
+    outline: 0;
+    width: fit-content;
+}
+.bald {
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+.notification {
+    position: relative;
+}
+.notification .dropdown-toggle::before {
+    content: '';
+    background: #ddad12;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    display: block;
+    left: -2px;
+    top: 3px;
+    border: 2px solid #fff;
+}
+.notification ul {
+    position: absolute;
+    top: 40px;
+    left: -150px!important;
+    right: 0;
+    margin: auto;
+    width: 300px;
+    background-color: #fff;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px!important;
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    border: none;
+    padding: 10px 0;
+}
+.notification ul::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    left: 10px;
+    right: 0;
+    margin: auto;
+    position: absolute;
+    top: -2px;
+    background-color: #fff;
+    border: none;
+    transform: rotate(45deg) translateY(-50%);
+}
+.notification ul li {
+    font-size: 14px;
+    text-align: left;
+    padding: 7px 18px;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease;
+}
+.notification ul li:hover {
+    background-color: #e6e1e1;
+}
+.notification .dropdown-menu button {
+    font-size: 12px;
+    width: 100%;
+    padding: 0.75rem 1rem;
+}
+.notification .dropdown-menu button:hover {
+    background-color: #e6e1e1;
+}
+.hidden {
+    opacity: 0;
+    transform: translateY(-20px); /* Slide up effect */
+}
+#clear-msg {
+    font-size: 14px;
+    text-align: center;
+    padding: 24px;
 }
 .user-controls {
     gap: 20px;
@@ -141,19 +234,6 @@ h1, h2, h3, h4, h5, h6, p {
 
 .quiz-score {
     padding: 18px 0;
-}
-.view-course {
-    background-color: var(--gold);
-    color: var(--title-dark);
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 175%;
-    text-align: center;
-    padding: 8px 30px;
-    border-radius: 4px;
-    border: none;
-    outline: 0;
-    width: fit-content;
 }
 .search-wrapper{
     padding: 20px 0.75rem;

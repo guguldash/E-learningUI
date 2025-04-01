@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <link rel="preload stylesheet" as="style" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="preload stylesheet" as="style">
+    <link rel="preload stylesheet" as="style" href="/assets/css-min/style.min.css">
+
+    <style>
+        * {
+            color: #303141;
+            transition: all 0.5s;
+        }
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .edit-profile.container {
+            height: calc(100vh - 10rem);
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+            border: 1px solid #d1d2e0;
+        }
+        .menu-tabs {
+            padding: 0.75rem 1.6rem;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .menu-tabs:hover {
+            background-color: #c5cfe0;
+        }
+        .menu-tabs.active {
+            background-color: #030a16;
+        }
+        .menu-tabs.active p {
+            color: #fff;
+        }
+        .profile-picture-wrapper {
+            width: fit-content;
+            display: block;
+            margin: auto;
+        }
+        .file-input {
+            display: none;
+        }
+        .file-label {
+            cursor: pointer;
+            display: inline-block;
+            text-align: center;
+            font-size: 14px;
+            font-weight: bold;
+            color: #333;
+            position: relative;
+        }
+
+        #imagePreview {
+            margin: auto;
+            display: none;
+            width: 47px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .hidden {
+            display: none;
+        }
+        .profile-picture {
+            padding: 1.6rem;
+        }
+        .profile-name {
+            text-align: center;
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: 0;
+            font-size: 16px;
+        }
+        .profile-designation {
+            padding: 0.5rem 1.6rem 1.6rem;
+            text-align: center;
+            font-size: 12px;
+        }
+        .sidebar {
+            width: 20%;
+            border-right: 1px solid #d1d2e0;
+            height: 100%;
+            background-color: #fff;
+        }
+        .wrapper {
+            width: 80%;
+            height: 100%;
+            background-color: #fff;
+        }
+        .content-header {
+            border-bottom: 1px solid #d1d2e0;
+            padding: 1.6rem;
+        }
+        .content-header h1 {
+            font-size: 24px;
+            text-align: center;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .content-header p {
+            text-align: center;
+        }
+        .content-playarea {
+            padding: 1.6rem;
+            position: relative;
+            overflow-x: hidden;
+            overflow-y: hidden;
+        }
+        .content-playarea form {
+            max-width: 600px;
+        }
+        .form-text {
+            font-size: 12px;
+            opacity: 0.6;
+        }
+        .content-playarea .profile-form, .content-playarea .courses {
+            display: block;
+            margin: auto;
+            position: absolute;
+            left: 1.6rem;
+            right: 1.6rem;
+            margin: auto;
+            transform: translateX(0);
+            opacity: 1;
+            visibility: visible;
+        }
+        .hidden-right {
+            transform: translateX(70%)!important;
+            opacity: 0!important;
+            visibility: hidden!important;
+            /* display: none!important; */
+        }
+        .hidden-left {
+            transform: translateX(-60%)!important;
+            opacity: 0!important;
+            visibility: hidden!important;
+            /* display: none!important; */
+        }
+        .progress-bar-wrapper {
+            align-items: flex-end;
+        }
+        .progress-bar-wrapper .primary-button {
+            font-size: 13px;
+            padding: 8px 25px;
+        }
+        .progress-bar-wrapper .primary-button svg {
+            width: 10px;
+        }
+    </style>
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+    <header id="navbar"></header>
+
+    <section class="container">
+        <div class="breadcrumbs px-0">
+            <p class="breadcrumb-link">
+                <a href="/">Home</a>
+            </p>
+            <p class="breadcrumb-link active">Profile</p>
+        </div>
+    </section>
+
+    <section class="edit-profile container d-flex align-items-start px-0">
+        <div class="sidebar">
+            <ul class="menu">
+                <li>
+                    <div class="position-relative profile-picture-wrapper">
+                        <img id="pro-picture" class="profile-picture" src="" alt="">
+                    </div>
+                    <h2 id="profile-name" class="profile-name"></h2>
+                    <p id="profile-designation" class="profile-designation"></p>
+                </li>
+                <!-- <li class="menu-tabs">
+                    <p>View Profile</p>
+                </li> -->
+                <li class="menu-tabs active">
+                    <p>Profile</p>
+                </li>
+                <li class="menu-tabs">
+                    <p>My Courses</p>
+                </li>
+            </ul>
+        </div>
+        <div class="wrapper">
+            <div class="content-header">
+                <h1>Public profile</h1>
+                <p>Add information about yourself</p>
+            </div>
+            <div class="content-playarea">
+                    <form class="profile-form">
+                        <div class="mb-3">
+                            <input type="file" class="form-control file-input" id="fileUpload" aria-describedby="pictureHelp" accept=".svg, .png, .jpg, .jpeg">
+                            <label for="fileUpload" class="file-label d-block" class="file-label">
+                                <svg id="uploadIcon" width="47" height="50" viewBox="0 0 47 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M23.3306 4.7832C17.0844 4.7832 12.021 9.84666 12.021 16.0927C12.021 22.3388 17.0844 27.4023 23.3306 27.4023C29.5765 27.4023 34.6401 22.3388 34.6401 16.0927C34.6401 9.84666 29.5765 4.7832 23.3306 4.7832ZM15.5924 16.0927C15.5924 11.8191 19.0569 8.35463 23.3306 8.35463C27.6042 8.35463 31.0687 11.8191 31.0687 16.0927C31.0687 20.3663 27.6042 23.8308 23.3306 23.8308C19.0569 23.8308 15.5924 20.3663 15.5924 16.0927Z" fill="#030A16"/><path fill-rule="evenodd" clip-rule="evenodd" d="M33.7265 0.210166C31.547 0.0214626 28.8296 0.0214722 25.3634 0.0214846H21.2976C17.8314 0.0214722 15.1139 0.0214626 12.9344 0.210166C10.7143 0.402382 8.88573 0.800498 7.24554 1.69612C4.94204 2.95392 3.04866 4.84732 1.79085 7.15082C0.89523 8.79101 0.497111 10.6195 0.304892 12.8396C0.11619 15.0192 0.116199 17.7366 0.116211 21.2028V28.7132C0.116211 28.8525 0.116211 28.9372 0.117009 29.0113C0.168211 33.7556 2.63078 37.9182 6.32975 40.3334C8.44142 41.7122 10.9585 42.5241 13.6589 42.5532C13.7329 42.5539 13.8176 42.5539 13.9565 42.5539H13.9846H13.9875C14.147 42.5548 14.2995 42.6196 14.4108 42.7341L14.4127 42.736L15.2699 43.6267C16.8069 45.2237 18.0863 46.5529 19.2414 47.466C20.459 48.4287 21.7531 49.107 23.3306 49.107C24.9079 49.107 26.202 48.4287 27.4196 47.466C28.5746 46.5529 29.8539 45.2237 31.391 43.6267L32.2503 42.7341C32.3615 42.6196 32.5139 42.5548 32.6734 42.5539H32.6765H32.7044C32.8434 42.5539 32.9282 42.5539 33.002 42.5532C35.7025 42.5241 38.2196 41.7122 40.3313 40.3334C44.0303 37.9182 46.4927 33.7556 46.5439 29.0113C46.5449 28.937 46.5449 28.8517 46.5449 28.7115V21.2027C46.5449 17.7366 46.5449 15.0192 46.356 12.8396C46.1639 10.6195 45.7658 8.79101 44.8701 7.15082C43.6122 4.84732 41.7189 2.95392 39.4156 1.69612C37.7753 0.800498 35.9468 0.402382 33.7265 0.210166ZM8.95714 4.83068C9.98378 4.27011 11.2577 3.94013 13.2424 3.76827C15.2499 3.59446 17.813 3.59292 21.3824 3.59292H25.2787C28.8479 3.59292 31.411 3.59446 33.4187 3.76827C35.4032 3.94013 36.6772 4.27011 37.7039 4.83068C39.4065 5.76037 40.8058 7.15984 41.7356 8.86242C42.2963 9.88903 42.626 11.163 42.7979 13.1477C42.9718 15.1552 42.9734 17.7183 42.9734 21.2877V28.6998V28.7787C42.9734 28.8801 42.9732 28.9303 42.9727 28.9727C42.9427 31.7596 41.7882 34.2763 39.9375 36.0903C37.9182 33.0106 34.4351 30.9739 30.4734 30.9739H16.1876C12.2259 30.9739 8.74278 33.0106 6.72347 36.0903C4.87273 34.2763 3.7183 31.7596 3.68823 28.9727C3.68766 28.9206 3.68764 28.8565 3.68764 28.6998V21.2877C3.68764 17.7183 3.68921 15.1552 3.86302 13.1477C4.03485 11.163 4.36483 9.88903 4.92542 8.86242C5.85509 7.15984 7.25456 5.76037 8.95714 4.83068ZM30.4734 34.5453C33.2051 34.5453 35.6094 35.9615 36.9868 38.1032C35.7575 38.6539 34.3975 38.9665 32.9634 38.982C32.9113 38.9825 32.8472 38.9825 32.6908 38.9825L32.6537 38.9827C31.537 38.9887 30.4696 39.4429 29.6908 40.2432L29.6651 40.2698L28.9058 41.0589C27.2579 42.7706 26.146 43.9203 25.2046 44.6644C24.3039 45.3765 23.7791 45.5356 23.3306 45.5356C22.882 45.5356 22.357 45.3765 21.4563 44.6644C20.5149 43.9203 19.4029 42.7706 17.7553 41.0589L16.9959 40.2698L16.9702 40.2432C16.1914 39.4429 15.1239 38.9887 14.0072 38.9827L13.9703 38.9825C13.8137 38.9825 13.7496 38.9825 13.6975 38.982C12.2634 38.9665 10.9036 38.6539 9.67416 38.1032C11.0517 35.9615 13.4558 34.5453 16.1876 34.5453H30.4734Z" fill="#030A16"/></svg>                                
+                                <p id="placeholder" class="text-center">Add / Change Image</p>
+                                <img id="imagePreview" class="hidden" alt="Selected Image">
+                            </label>
+                        </div>
+                        <div class="mb-3">
+                            <label for="full_name" class="form-label">Full name</label>
+                            <input type="text" class="form-control" id="full_name" aria-describedby="nameHelp">
+                            <div id="nameHelp" class="form-text">Please enter you full name</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" value="test@email.com">
+                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" value="1234567890">
+                        </div>
+                        <div class="mb-3">
+                            <label for="designation" class="form-label">Designation</label>
+                            <input type="text" class="form-control" id="designation" value="Web Developer">
+                        </div>
+                        <button type="submit" class="primary-button">Update</button>
+                    </form>
+
+
+
+
+                    <div class="courses hidden-right">
+                        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                
+                            <div class="col">
+                                <div class="card h-100 shadow-sm border-0">
+                                    <div class="position-relative course-thumbnail">
+                                        <img src="/assets/img/placeholder.png" class="card-img-top" alt="Course Image">
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="title-buttons">
+                                            <h3 class="title-3">ITIL V4 Training</h3>
+                                            <p class="date">07 Jan 2020</p>
+                                        </div>
+                                        
+                                        <small class="course-description">This is the ITIL V4 Training which is a part of the mandatory compliance training.</small>
+                
+                                        <div class="tags">
+                                            <small>#ITIL</small>
+                                            <small>#V4</small>
+                                            <small>#Training</small>
+                                        </div>
+                
+                                        <small class="quiz-score">Quiz score: <strong>55%</strong></small>
+    
+                                        <div class="progress-bar-wrapper">
+                                            <div class="progress-line">
+                                                <small data-completion-percentage="10">10% Completed</small>
+                                                <span></span>
+                                            </div>
+                
+                                            <button class="view-course primary-button">
+                                                View
+                                                <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.20455 12.473L5.88778 11.169L9.83168 7.22514H0.25V5.32031H9.83168L5.88778 1.38281L7.20455 0.0724429L13.4048 6.27273L7.20455 12.473Z" fill="#23232F"/></svg>                                        
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <div class="col">
+                                <div class="card h-100 shadow-sm border-0">
+                                    <div class="position-relative course-thumbnail">
+                                        <img src="/assets/img/placeholder.png" class="card-img-top" alt="Course Image">
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="title-buttons">
+                                            <h3 class="title-3">ITIL V4 Training</h3>
+                                            <p class="date">07 Jan 2020</p>
+                                        </div>
+                                        
+                                        <small class="course-description">This is the ITIL V4 Training which is a part of the mandatory compliance training.</small>
+                
+                                        <div class="tags">
+                                            <small>#ITIL</small>
+                                            <small>#V4</small>
+                                            <small>#Training</small>
+                                        </div>
+                
+                                        <small class="quiz-score">Quiz score: <strong>55%</strong></small>
+    
+                                        <div class="progress-bar-wrapper">
+                                            <div class="progress-line">
+                                                <small data-completion-percentage="10">10% Completed</small>
+                                                <span></span>
+                                            </div>
+                
+                                            <button class="view-course primary-button">
+                                                View
+                                                <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.20455 12.473L5.88778 11.169L9.83168 7.22514H0.25V5.32031H9.83168L5.88778 1.38281L7.20455 0.0724429L13.4048 6.27273L7.20455 12.473Z" fill="#23232F"/></svg>                                        
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <div class="col">
+                                <div class="card h-100 shadow-sm border-0">
+                                    <div class="position-relative course-thumbnail">
+                                        <img src="/assets/img/placeholder.png" class="card-img-top" alt="Course Image">
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="title-buttons">
+                                            <h3 class="title-3">ITIL V4 Training</h3>
+                                            <p class="date">07 Jan 2020</p>
+                                        </div>
+                                        
+                                        <small class="course-description">This is the ITIL V4 Training which is a part of the mandatory compliance training.</small>
+                
+                                        <div class="tags">
+                                            <small>#ITIL</small>
+                                            <small>#V4</small>
+                                            <small>#Training</small>
+                                        </div>
+                
+                                        <small class="quiz-score">Quiz score: <strong>55%</strong></small>
+    
+                                        <div class="progress-bar-wrapper">
+                                            <div class="progress-line">
+                                                <small data-completion-percentage="10">10% Completed</small>
+                                                <span></span>
+                                            </div>
+                
+                                            <button class="view-course primary-button">
+                                                View
+                                                <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.20455 12.473L5.88778 11.169L9.83168 7.22514H0.25V5.32031H9.83168L5.88778 1.38281L7.20455 0.0724429L13.4048 6.27273L7.20455 12.473Z" fill="#23232F"/></svg>                                        
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <div class="col">
+                                <div class="card h-100 shadow-sm border-0">
+                                    <div class="position-relative course-thumbnail">
+                                        <img src="/assets/img/placeholder.png" class="card-img-top" alt="Course Image">
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="title-buttons">
+                                            <h3 class="title-3">ITIL V4 Training</h3>
+                                            <p class="date">07 Jan 2020</p>
+                                        </div>
+                                        
+                                        <small class="course-description">This is the ITIL V4 Training which is a part of the mandatory compliance training.</small>
+                
+                                        <div class="tags">
+                                            <small>#ITIL</small>
+                                            <small>#V4</small>
+                                            <small>#Training</small>
+                                        </div>
+                
+                                        <small class="quiz-score">Quiz score: <strong>55%</strong></small>
+    
+                                        <div class="progress-bar-wrapper">
+                                            <div class="progress-line">
+                                                <small data-completion-percentage="10">10% Completed</small>
+                                                <span></span>
+                                            </div>
+                
+                                            <button class="view-course primary-button">
+                                                View
+                                                <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.20455 12.473L5.88778 11.169L9.83168 7.22514H0.25V5.32031H9.83168L5.88778 1.38281L7.20455 0.0724429L13.4048 6.27273L7.20455 12.473Z" fill="#23232F"/></svg>                                        
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <div class="col">
+                                <div class="card h-100 shadow-sm border-0">
+                                    <div class="position-relative course-thumbnail">
+                                        <img src="/assets/img/placeholder.png" class="card-img-top" alt="Course Image">
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="title-buttons">
+                                            <h3 class="title-3">ITIL V4 Training</h3>
+                                            <p class="date">07 Jan 2020</p>
+                                        </div>
+                                        
+                                        <small class="course-description">This is the ITIL V4 Training which is a part of the mandatory compliance training.</small>
+                
+                                        <div class="tags">
+                                            <small>#ITIL</small>
+                                            <small>#V4</small>
+                                            <small>#Training</small>
+                                        </div>
+                
+                                        <small class="quiz-score">Quiz score: <strong>55%</strong></small>
+    
+                                        <div class="progress-bar-wrapper">
+                                            <div class="progress-line">
+                                                <small data-completion-percentage="10">10% Completed</small>
+                                                <span></span>
+                                            </div>
+                
+                                            <button class="view-course primary-button">
+                                                View
+                                                <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.20455 12.473L5.88778 11.169L9.83168 7.22514H0.25V5.32031H9.83168L5.88778 1.38281L7.20455 0.0724429L13.4048 6.27273L7.20455 12.473Z" fill="#23232F"/></svg>                                        
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer id="footer" class="footer"></footer>
+
+
+
+
+
+    <script defer src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+         document.addEventListener('DOMContentLoaded', function () {
+            $("#navbar").load("/common/navbar.html");
+            $("#footer").load("/common/footer.html");
+            
+            let parentHeight = $(".sidebar").outerHeight();
+            let headerHeight = $(".content-header").outerHeight();
+            
+            $(".content-playarea").css('height', parentHeight - headerHeight)
+
+
+            let menuTabs = document.querySelectorAll('.menu-tabs');
+            menuTabs.forEach((e, index) => {
+                e.addEventListener('click', () => {
+                    menuTabs.forEach(tab => tab.classList.remove('active'));
+
+                    // Add 'active' class to the clicked tab
+                    e.classList.add('active');
+
+                    if (index == 0) {
+                        $('.profile-form').removeClass('hidden-left')
+                        $('.courses').addClass('hidden-right')
+                        $('.content-playarea').css('overflow-y', 'hidden')
+                        $('.content-header h1').text('Public profile')
+                        $('.content-header p').text('Add information about yourself')
+                    } else {
+                        $('.courses').removeClass('hidden-right')
+                        $('.profile-form').addClass('hidden-left')
+                        $('.content-playarea').css('overflow-y', 'scroll')
+                        $('.content-header h1').text('My Courses')
+                        $('.content-header p').text('Manage your subscriptions')
+                    }
+                })
+            });
+
+            document.getElementById('fileUpload').addEventListener('change', function(event) {
+                const file = event.target.files[0];
+                const fileLabel = document.getElementById('fileLabel');
+                const svgIcon = document.getElementById('uploadIcon');
+                const placeholder = document.getElementById('placeholder');
+                const imgPreview = document.getElementById('imagePreview');
+
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        imgPreview.src = e.target.result; // Set the preview image
+                        imgPreview.style.display = "block"; // Show the image
+                        svgIcon.style.display = "none"; // Hide the SVG
+                        placeholder.style.display = "none"; // Hide the SVG
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+         });
+    </script>
+    <script>
+         document.addEventListener('DOMContentLoaded', function () {
+            // Fetch the JSON file
+            
+            fetch('./dummy/profile.json')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('full_name').value = data.name;
+                document.getElementById('email').value = data.email;
+                document.getElementById('password').value = data.password;
+                document.getElementById('designation').value = data.designation;
+                document.getElementById('pro-picture').src = data.photo;
+                document.getElementById('profile-name').innerText = data.name;
+                document.getElementById('profile-designation').innerText = data.designation;
+            })
+            .catch(error => {
+                console.error('Error loading the JSON data:', error);
+            });
+        });
+    </script>
+</body>
+</html>
