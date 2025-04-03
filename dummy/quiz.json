@@ -1,22 +1,52 @@
 [
     {
-        "question" : "This is question 1",
-        "type": "radio",
+        "question" : "Which of the following are oceans on Earth?",
+        "type": "checkbox",
         "choices": [
-            "Quiz 1 Answer 1",
-            "Quiz 1 Answer 2",
-            "Quiz 1 Answer 3",
-            "Quiz 1 Answer 4"
+            "Pacific Ocean",
+            "Atlantic Ocean",
+            "Indian Ocean",
+            "Nile Ocean"
         ]
     },
     {
-        "question" : "This is question 2",
+        "question" : "What is the chemical symbol for gold?",
+        "type": "radio",
+        "choices": [
+            "Ag",
+            "Au",
+            "Pb",
+            "Go"
+        ]
+    },
+    {
+        "question" : "Which of the following were famous leaders during World War II?",
+        "type": "radio",
+        "choices": [
+            "Winston Churchill",
+            "Franklin D. Roosevelt",
+            "Adolf Hitler",
+            "Abraham Lincoln"
+        ]
+    },
+    {
+        "question" : "Which planets in our solar system have rings? (Multiple Correct Answers)",
+        "type": "radio",
+        "choices": [
+            "Jupiter",
+            "Earth",
+            "Saturn",
+            "Neptune"
+        ]
+    },
+    {
+        "question" : "Who is credited with inventing the telephone?",
         "type": "checkbox",
         "choices": [
-            "Quiz 2 Answer 1",
-            "Quiz 2 Answer 2",
-            "Quiz 2 Answer 3",
-            "Quiz 2 Answer 4"
+            "Nikola Tesla",
+            "Alexander Graham Bell",
+            "Thomas Edison",
+            "Isaac Newton"
         ]
     }
 ]

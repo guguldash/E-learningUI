@@ -50,7 +50,7 @@
                         <div class="quiz-wrapper">
                             <div class="quiz-content">
                                 <h2 class="title-2 mb-0">Take a quiz</h2>
-                                <p class="text-dark question-count">Question <span></span>/8</p>
+                                <p class="text-dark question-count">Question <span class="count"></span>/<span class="length"></span></p>
                                 
                                 <div class="quiz">
                                     <h3 class="title-3">Lorem ipsum dolor sit amet consectetur adipisicing elit?</h3>
@@ -78,6 +78,11 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="quiz-result">
+                                <h2 class="text-dark text-center">Your Final Score</h2>
+                                <h4 class="text-dark text-center">5/5</h4>
+                            </div>
                             
                             <div class="quiz-controls">
                                 <button class="theme-buttons secondary-button previous-button">
@@ -92,6 +97,10 @@
                                     </button>
                                     <button class="theme-buttons primary-button next-button">
                                         <p>Save and Next</p>
+                                        <img width="8" style="transform: rotate(-90deg);" src="/assets/img/arrow.svg" alt="">
+                                    </button>
+                                    <button class="theme-buttons primary-button submit-button">
+                                        <p>Submit</p>
                                         <img width="8" style="transform: rotate(-90deg);" src="/assets/img/arrow.svg" alt="">
                                     </button>
                                 </div>
@@ -554,6 +563,9 @@
             let tab_pane = document.querySelectorAll('.tab-pane');
             let prev_button = document.querySelector('.previous-button');
             let next_button = document.querySelector('.next-button');
+            let submit_button = document.querySelector('.submit-button');
+            $(".quiz-result").hide();
+            $(".submit-button").hide();
 
             fetch('./dummy/quiz.json')
             .then(response => response.json())
@@ -566,15 +578,33 @@
             });
             
             prev_button.addEventListener('click', () => {
-                if (quiz_index >= 0) {
+                if (quiz_index > 0) {
                     quiz_index -= 1
                     renderQuiz(quiz_data);
                 }
+                $('.submit-button').hide();
+                $('.next-button').show();
             })
             
             next_button.addEventListener('click', () => {
-                quiz_index += 1
-                renderQuiz(quiz_data);
+                console.log(quiz_index);
+                if (quiz_index < quiz_data.length - 1) {
+                    quiz_index += 1
+                    renderQuiz(quiz_data);
+                }
+                
+                if (quiz_index == quiz_data.length - 1) {
+                    $('.next-button').hide();
+                    $('.submit-button').show();
+                }
+            })
+            
+            submit_button.addEventListener('click', () => {
+                $(".clear-reponse").hide();
+                $(".previous-button").hide();
+                $(".submit-button").hide();
+                $(".quiz-content").hide();
+                $(".quiz-result").show();
             })
             
             function renderQuiz(data) {
@@ -583,7 +613,8 @@
                 $('.quiz h3').text(data[quiz_index].question);
                 $('.choices input').prop('type', data[quiz_index].type)
                 $(".choices").empty();
-                $('.question-count span').text(quiz_index + 1);
+                $('.question-count span.count').text(quiz_index + 1);
+                $('.question-count span.length').text(quiz_data.length);
                 
                 
                 data[quiz_index].choices.forEach((e, index) => {
