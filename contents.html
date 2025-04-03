@@ -13,7 +13,7 @@
 <body class="d-flex flex-column min-vh-100">
     <div id="navbar"></div>
 
-    <main class="row mx-0">
+    <main class="row mx-0" style="padding-bottom: 60px;">
         <!-- Left Section: Video/PDF -->
         <section class="col-lg-9 p-0">
 
@@ -28,6 +28,9 @@
                         <li class="nav-item" role="presentation">
                             <button class="nav-link" id="pills-document-tab" data-bs-toggle="pill" data-bs-target="#pills-document" type="button" role="tab" aria-controls="pills-document" aria-selected="false">Document</button>
                         </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="pills-quiz-tab" data-bs-toggle="pill" data-bs-target="#pills-quiz" type="button" role="tab" aria-controls="pills-quiz" aria-selected="false">Take a Quiz</button>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -37,16 +40,63 @@
                 <div class="tab-content" id="pills-tabContent">
                     <div class="tab-pane fade show active" id="pills-overview" role="tabpanel" aria-labelledby="pills-overview-tab" tabindex="0">
                         <div class="video-container">
-                            <!-- <video class="w-100" style="height: 500px;" controls>
-                                <source src="https://tlabenv01astorage.blob.core.windows.net/videos/901f77ae-8667-4a0a-a63d-648cc3b905db/Dashboard_Introduction.mp4?se=2024-12-29T19%3A18%3A36Z&sp=r&sv=2024-08-04&sr=b&sig=TTtuggXZKa2DeBRKBUHylliqQYcXKobQAY2HgilXiCc%3D" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video> -->
-            
                             <iframe style="width: 100%;aspect-ratio: 16/9;height: 660px;" id="demo-video" src="https://www.youtube-nocookie.com/embed/KIO8JAxRoCg?si=TvABjPDSM5C9UybJ&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         </div>
                     </div>
                     <div class="tab-pane fade" id="pills-document" role="tabpanel" aria-labelledby="pills-document-tab" tabindex="0">
                         <embed src="https://pdfobject.com/pdf/sample.pdf" class="w-100" style="height: 660px;" type="application/pdf">
+                    </div>
+                    <div class="tab-pane fade" id="pills-quiz" role="tabpanel" aria-labelledby="pills-quiz-tab" tabindex="0">
+                        <div class="quiz-wrapper">
+                            <div class="quiz-content">
+                                <h2 class="title-2 mb-0">Take a quiz</h2>
+                                <p class="text-dark question-count">Question <span></span>/8</p>
+                                
+                                <div class="quiz">
+                                    <h3 class="title-3">Lorem ipsum dolor sit amet consectetur adipisicing elit?</h3>
+
+                                    <div class="choices">
+                                    </div>
+                                </div>
+
+                                <div class="show-hint">
+                                    
+                                    
+                                    <button class="bald" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">
+                                        <img width="25" src="/assets/img/idea.svg" alt="">
+                                        <p class="text-dark">Show hint</p>
+                                        <img width="10" src="/assets/img/arrow.svg" alt="">
+                                    </button>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="collapse p-3" id="multiCollapseExample2">
+                                                <p class="text-dark">
+                                                    Some placeholder content for the second collapse component of this multi-collapse example. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="quiz-controls">
+                                <button class="theme-buttons secondary-button previous-button">
+                                    <img width="8" style="transform: rotate(90deg);" src="/assets/img/arrow.svg" alt="">
+                                    <p>Previous</p>
+                                </button>
+                                
+                                <div>
+                                    <button class="theme-buttons third-button clear-reponse">
+                                        <img width="15" src="/assets/img/bin.svg" alt="">
+                                        <p>Clear Response</p>
+                                    </button>
+                                    <button class="theme-buttons primary-button next-button">
+                                        <p>Save and Next</p>
+                                        <img width="8" style="transform: rotate(-90deg);" src="/assets/img/arrow.svg" alt="">
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -136,6 +186,7 @@
                             </div>
                         </div>
                     </div>
+                    
                     <div class="accordion-item">
                         <h2 class="accordion-header">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -185,9 +236,10 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="accordion-item">
                         <h2 class="accordion-header">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                 <div>
                                     <p class="title-3">Topic 3: Lorem ipsum dolor</p>
                                     <small>
@@ -197,7 +249,7 @@
                                 </div>
                             </button>
                         </h2>
-                        <div id="collapseThree" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
                                 <div>
                                     <input type="checkbox" checked name="" id="">
@@ -289,6 +341,7 @@
                             </div>
                         </div>
                     </div>
+                    
                     <div class="accordion-item">
                         <h2 class="accordion-header">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
@@ -438,6 +491,7 @@
                             </div>
                         </div>
                     </div>
+                    
                     <div class="accordion-item">
                         <h2 class="accordion-header">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
@@ -489,11 +543,81 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-         $(document).ready(function() {
+        document.addEventListener('DOMContentLoaded', function () {
             $("#navbar").load("/common/navbar.html");
             $("#breadcrumbs").load("/common/breadcrumbs.html");
             $("#footer").load("/common/footer.html");
-         });
+            
+            // Fetch the JSON file
+            let quiz_index = 0;
+            let quiz_data = [];
+            let tab_pane = document.querySelectorAll('.tab-pane');
+            let prev_button = document.querySelector('.previous-button');
+            let next_button = document.querySelector('.next-button');
+
+            fetch('./dummy/quiz.json')
+            .then(response => response.json())
+            .then(data => {
+                quiz_data = data
+                renderQuiz(quiz_data);
+            })
+            .catch(error => {
+                console.error('Error loading the JSON data:', error);
+            });
+            
+            prev_button.addEventListener('click', () => {
+                if (quiz_index >= 0) {
+                    quiz_index -= 1
+                    renderQuiz(quiz_data);
+                }
+            })
+            
+            next_button.addEventListener('click', () => {
+                quiz_index += 1
+                renderQuiz(quiz_data);
+            })
+            
+            function renderQuiz(data) {
+                let template;
+                
+                $('.quiz h3').text(data[quiz_index].question);
+                $('.choices input').prop('type', data[quiz_index].type)
+                $(".choices").empty();
+                $('.question-count span').text(quiz_index + 1);
+                
+                
+                data[quiz_index].choices.forEach((e, index) => {
+                    template = `<div class="form-check">
+                        <input class="form-check-input" type="${data[quiz_index].type}" name="flexRadioDefault" id="flexRadioDefault${index}">
+                        <label class="form-check-label text-dark" for="flexRadioDefault${index}">
+                            ${e}
+                        </label>
+                    </div>`
+                    $(".choices").append(template)
+                });
+
+                let formCheckInputs = document.querySelectorAll('.choices .form-check-input');
+                let clearResponse = document.querySelector('.clear-reponse');
+                
+                if (clearResponse) {
+                    clearResponse.addEventListener('click', () => {
+                        formCheckInputs.forEach(input => {
+                            input.checked = false;
+                        });
+                    });
+                }
+            }
+            
+            tab_pane.forEach((e, i) => {
+                e.addEventListener('click', () => {
+                    if (i == 2) {
+                        $(".chapter-overview").hide();
+                    } else {
+                        $(".chapter-overview").show();
+                    }
+                })
+            });
+        });
     </script>
 </body>
 

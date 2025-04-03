@@ -20,7 +20,10 @@ ul {
     margin: 0;
     list-style: none;
 }
-
+.form-check-input:checked {
+    background-color: var(--gold);
+    border-color: var(--gold);
+}
 .list-group-item {
     background-color: #34495e;
     color: #ffffff;
@@ -30,8 +33,14 @@ ul {
     background-color: #34495e;
     color: #ffffff;
 }
+.subscribed-course-container .wrapper {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
 
-
+.subscribed-course-container .wrapper::-webkit-scrollbar { 
+    display: none;
+}
 
 /* common componenets */
 .header, .user-controls, .title-buttons, .progress-bar-wrapper, .user-dropdown, .track-progress>div, .accordion-body>div {
@@ -189,6 +198,12 @@ ul {
 .title-3 {
     color: var(--title-dark);
     font-size: 20px;
+    line-height: 130%;
+    font-weight: 500;
+}
+.title-3 {
+    color: var(--title-dark);
+    font-size: 18px;
     line-height: 130%;
     font-weight: 500;
 }
@@ -927,5 +942,76 @@ color: rgba(255, 255, 255, 0.6);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 0;
+    padding: 10px 30px 10px 0;
+}
+.quiz-wrapper {
+    margin: 0 30px 30px;
+}
+.quiz h3 {
+    margin-bottom: 3.125rem;
+}
+.quiz-content {
+    background-color: #fff;
+    padding: 25px 50px;
+    border-radius: 8px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.choices {
+    width: 60%;
+}
+.choices .form-check {
+    padding: 15px 22px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1.125rem;
+    border: 1px solid #e3e3e3;
+    border-radius: 6px;
+}
+.choices .form-check-input {
+    margin: 0;
+    float: none;
+}
+.show-hint button {
+    padding-top: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.quiz-controls {
+    background-color: #fff;
+    padding: 25px 50px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.quiz-controls, .quiz-controls>div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+.quiz-controls button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.theme-buttons {
+    outline: none;
+    gap: 5px;
+    padding: 7px 20px;
+    border-radius: 5px;
+}
+.primary-button {
+    border: 1px solid #e4dddd;
+    background-color: var(--gold);
+}
+.secondary-button {
+    border: 1px solid #e4dddd;
+    background-color: var(--grey);
+}
+.third-button {
+    border: none;
+    background-color: transparent;
 }

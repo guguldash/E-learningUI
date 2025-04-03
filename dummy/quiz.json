@@ -1,0 +1,22 @@
+[
+    {
+        "question" : "This is question 1",
+        "type": "radio",
+        "choices": [
+            "Quiz 1 Answer 1",
+            "Quiz 1 Answer 2",
+            "Quiz 1 Answer 3",
+            "Quiz 1 Answer 4"
+        ]
+    },
+    {
+        "question" : "This is question 2",
+        "type": "checkbox",
+        "choices": [
+            "Quiz 2 Answer 1",
+            "Quiz 2 Answer 2",
+            "Quiz 2 Answer 3",
+            "Quiz 2 Answer 4"
+        ]
+    }
+]
